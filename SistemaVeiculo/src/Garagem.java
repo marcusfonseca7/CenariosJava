@@ -14,18 +14,16 @@ public class Garagem {
         System.out.println("Digite o modelo do Veículo: ");
         String modelo = sc.nextLine();
 
-        System.out.println("Digite sua velocidade máxima: ");
         String velocidadeMaxima = sc.nextLine();
-        sc.nextLine(); //limpeza
 
-        System.out.println("Em qual categoria deseja adicionar? | 1 - Carro | 2 - Moto | 3 - Caminhão | (Digite o nome exato!)");
+        System.out.println("Em qual categoria deseja adicionar? | - Carro | - Moto | - Caminhão | (Digite o nome exato!)");
         String opcaoVeiculo = sc.nextLine();
 
         if (opcaoVeiculo.equals("Carro")) {
             Carro carro = new Carro(modelo, velocidadeMaxima);
             listaCarro.add(carro);
             System.out.println("Carro Cadastrado");
-        } else if (getClass().getSimpleName().equals("Moto")){
+        } else if (opcaoVeiculo.equals("Moto")){
             Moto moto = new Moto(modelo, velocidadeMaxima);
             listaMoto.add(moto);
             System.out.println("Moto Cadastrada");
@@ -42,26 +40,68 @@ public class Garagem {
 
         System.out.println("\nCarros:");
         for (Veiculo veiculo : listaCarro) {
-            if (veiculo.getClass().getSimpleName().equals("Carro")) {
                 System.out.println(veiculo);
-            }
         }
 
         System.out.println("\nMotos:");
         for (Veiculo veiculo : listaMoto) {
-            if (veiculo.getClass().getSimpleName().equals("Moto")) {
                 System.out.println(veiculo);
-            }
         }
 
         System.out.println("\nCaminhão:");
         for (Veiculo veiculo : listaCaminhao) {
-            if (veiculo.getClass().getSimpleName().equals("Caminhão")) {
                 System.out.println(veiculo);
-            }
         }
     }
 
 
-    public void deletarVeiculo(){}
+    public void deletarVeiculo() {
+
+        System.out.println("Em qual categoria deseja deletar um veículo? | 1 - Carro | 2 - Moto | 3 - Caminhão |");
+        int opcaoDeletar = sc.nextInt();
+        sc.nextLine(); //limpeza
+
+        switch (opcaoDeletar) {
+            case 1:
+                int contador = 0;
+                System.out.println("\nCarros:");
+                for (Veiculo veiculo : listaCarro) {
+                        System.out.println((contador + 1) + " - " + veiculo);
+                        contador++;
+                }
+                System.out.println("Qual deseja deletar?");
+                int deletar = sc.nextInt();
+                listaCarro.remove(deletar - 1);
+                System.out.println("Carro removido com sucesso!");
+                break;
+
+            case 2:
+                contador = 0;
+                System.out.println("\nMotos:");
+                for (Veiculo veiculo : listaMoto) {
+                    System.out.println((contador + 1) + " - " + veiculo);
+                    contador++;
+                }
+                System.out.println("Qual deseja deletar?");
+                deletar = sc.nextInt();
+                listaMoto.remove(deletar - 1);
+                System.out.println("Moto removido com sucesso!");
+                break;
+
+            case 3:
+                contador = 0;
+                System.out.println("\nCaminhões:");
+                for (Veiculo veiculo : listaCaminhao) {
+                    System.out.println((contador + 1) + " - " + veiculo);
+                    contador++;
+                }
+                System.out.println("Qual deseja deletar?");
+                deletar = sc.nextInt();
+                listaCaminhao.remove(deletar - 1);
+                System.out.println("Caminhão removido com sucesso!");
+                break;
+        }
+
+
+    }
 }
