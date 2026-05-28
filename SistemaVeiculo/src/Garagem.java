@@ -14,6 +14,7 @@ public class Garagem {
         System.out.println("Digite o modelo do Veículo: ");
         String modelo = sc.nextLine();
 
+        System.out.println("Digite o a velocidade máxima: ");
         String velocidadeMaxima = sc.nextLine();
 
         System.out.println("Em qual categoria deseja adicionar? | - Carro | - Moto | - Caminhão | (Digite o nome exato!)");
@@ -61,47 +62,26 @@ public class Garagem {
         int opcaoDeletar = sc.nextInt();
         sc.nextLine(); //limpeza
 
-        switch (opcaoDeletar) {
-            case 1:
+        ArrayList listaSelecionada = new ArrayList<>();
+
+        if (opcaoDeletar == 1) {
+            listaSelecionada = listaCarro;
+        } else if (opcaoDeletar == 2) {
+            listaSelecionada = listaMoto;
+        } else if (opcaoDeletar == 3) {
+            listaSelecionada = listaCaminhao;
+        }
+
                 int contador = 0;
-                System.out.println("\nCarros:");
-                for (Veiculo veiculo : listaCarro) {
+                System.out.println("\nVeículos da Categoria:");
+                for (Object veiculo : listaSelecionada) {
                         System.out.println((contador + 1) + " - " + veiculo);
                         contador++;
                 }
                 System.out.println("Qual deseja deletar?");
                 int deletar = sc.nextInt();
-                listaCarro.remove(deletar - 1);
-                System.out.println("Carro removido com sucesso!");
-                break;
-
-            case 2:
-                contador = 0;
-                System.out.println("\nMotos:");
-                for (Veiculo veiculo : listaMoto) {
-                    System.out.println((contador + 1) + " - " + veiculo);
-                    contador++;
-                }
-                System.out.println("Qual deseja deletar?");
-                deletar = sc.nextInt();
-                listaMoto.remove(deletar - 1);
-                System.out.println("Moto removido com sucesso!");
-                break;
-
-            case 3:
-                contador = 0;
-                System.out.println("\nCaminhões:");
-                for (Veiculo veiculo : listaCaminhao) {
-                    System.out.println((contador + 1) + " - " + veiculo);
-                    contador++;
-                }
-                System.out.println("Qual deseja deletar?");
-                deletar = sc.nextInt();
-                listaCaminhao.remove(deletar - 1);
-                System.out.println("Caminhão removido com sucesso!");
-                break;
-        }
-
+                listaSelecionada.remove(deletar - 1);
+                System.out.println("Veículo removido com sucesso!");
 
     }
 }
