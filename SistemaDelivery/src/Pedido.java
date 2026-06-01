@@ -6,19 +6,20 @@ public class Pedido {
 
     public void adicionarProduto(Produto produto) {
         pedido.add(produto);
-        System.out.println(produto);
     }
 
     public void fecharPedido() {
 
+        double totalPedido = 0;
+
         for (Produto produto : pedido) {
             double somaProduto = produto.getPreco()*produto.getQuantidade();
-            System.out.println("Produto: " + produto.getNome() + " - Preço: " + produto.getPreco() + "x" + produto.getQuantidade() + " = " + somaProduto);
+            System.out.println("Produto: " + produto.getNome() + " - Preço: " + produto.getPreco() + " x " + produto.getQuantidade() + " = " + somaProduto);
 
-            double totalPedido = 0;
             totalPedido += somaProduto;
-            System.out.println(totalPedido);
         }
 
+        System.out.println("======================================");
+        System.out.println("Total do Pedido: " + totalPedido);
     }
 }
