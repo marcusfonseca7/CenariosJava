@@ -28,4 +28,12 @@ public class Escola {
         listaAluno.add(aluno);
         System.out.println("Aluno e notas cadastrados!!");
     }
+
+    public void verMedias() {
+
+    }
+
+    public void conferirAprovacoes() {
+
+    }
 }
