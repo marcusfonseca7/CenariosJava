@@ -25,6 +25,7 @@ public class Escola {
         double media = somaNotas / notas.length;
 
         Aluno aluno = new Aluno(nomeAluno, serie, notas, media);
+        listaAluno.add(aluno);
         System.out.println("Aluno e notas cadastrados!!");
     }
 }
