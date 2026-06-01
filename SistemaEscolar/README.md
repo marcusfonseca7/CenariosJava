@@ -4,7 +4,7 @@ Seu Gestor te escalou para fazer parte de uma equipe para desenvolver um sistema
 
 ---
 
-## Requisito Funcional
+## Requisitos Funcionais
 
 - Cadastrar alunos;
 - Cadastrar 4 notas;

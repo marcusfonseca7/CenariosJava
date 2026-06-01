@@ -4,7 +4,7 @@ Você é um Estagiário em desenvolvimento e precisa desenvolver um sistema simp
 
 ---
 
-## Requisito Funcional
+## Requisitos Funcionais
 
 - Criar pedido;
 - Adicionar produto;

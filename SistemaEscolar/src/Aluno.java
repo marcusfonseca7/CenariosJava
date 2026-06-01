@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class Aluno {
     private String nome;
     private int serie;
-    private double[] notas = new double[4];
+    private double[] notas;
     private double media;
 
     public Aluno(String nome, int serie, double[] notas, double media) {
@@ -31,7 +33,7 @@ public class Aluno {
         return serie;
     }
 
-    public int getMedia() {
+    public double getMedia() {
         return media;
     }
 
@@ -39,4 +41,8 @@ public class Aluno {
         this.media = media;
     }
 
+    @Override
+    public String toString() {
+        return "Nome: " + nome + " | Serie: " + serie + "º Série";
+    }
 }

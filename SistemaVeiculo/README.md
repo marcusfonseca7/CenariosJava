@@ -4,7 +4,7 @@ Você é um Estagiário em desenvolvimento Java e precisa criar um sistema para 
 
 ---
 
-## Requisito Funcional
+## Requisitos Funcionais
 
 - Mostrar modelo do veículo;
 - Mostrar velocidade máxima;
