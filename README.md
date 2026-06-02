@@ -19,7 +19,7 @@ Cada pasta representa um cenário diferente e cada um tem um README explicativo 
 
 ## 🛠️ Tecnologias utilizadas
 
-- Java
+- Java 24
 - Programação Orientada a Objetos (POO)
 
 ## ▶️ Como executar
