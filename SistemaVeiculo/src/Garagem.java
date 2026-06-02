@@ -39,19 +39,28 @@ public class Garagem {
     public void lerVeiculos(){
         System.out.println("Os veículos da garagem são:");
 
-        System.out.println("\nCarros:");
+        System.out.println("\n-------- Carros: --------");
         for (Veiculo veiculo : listaCarro) {
                 System.out.println(veiculo);
+            System.out.print("Buzina do modelo: ");
+            veiculo.buzina();
+            System.out.println();
         }
 
-        System.out.println("\nMotos:");
+        System.out.println("\n-------- Motos: --------");
         for (Veiculo veiculo : listaMoto) {
                 System.out.println(veiculo);
+            System.out.print("Buzina do modelo: ");
+                veiculo.buzina();
+            System.out.println();
         }
 
-        System.out.println("\nCaminhão:");
+        System.out.println("\n-------- Caminhão: --------");
         for (Veiculo veiculo : listaCaminhao) {
                 System.out.println(veiculo);
+            System.out.print("Buzina do modelo: ");
+                veiculo.buzina();
+            System.out.println();
         }
     }
 
@@ -72,16 +81,16 @@ public class Garagem {
             listaSelecionada = listaCaminhao;
         }
 
-                int contador = 0;
-                System.out.println("\nVeículos da Categoria:");
-                for (Object veiculo : listaSelecionada) {
-                        System.out.println((contador + 1) + " - " + veiculo);
-                        contador++;
-                }
-                System.out.println("Qual deseja deletar?");
-                int deletar = sc.nextInt();
-                listaSelecionada.remove(deletar - 1);
-                System.out.println("Veículo removido com sucesso!");
+        int contador = 0;
+        System.out.println("\nVeículos da Categoria:");
+        for (Object veiculo : listaSelecionada) {
+            System.out.println((contador + 1) + " - " + veiculo);
+            contador++;
+        }
+        System.out.println("Qual deseja deletar?");
+        int deletar = sc.nextInt();
+        listaSelecionada.remove(deletar - 1);
+        System.out.println("Veículo removido com sucesso!");
 
     }
 }
